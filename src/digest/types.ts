@@ -17,9 +17,5 @@ export type NightDigest = {
   badLines: number;
 };
 
-// null when runs/<night>.jsonl is not on disk.
-export function readNight(runsDir: string, night: string): NightDigest | null {
-  void runsDir;
-  void night;
-  throw new Error('readNight is not implemented');
-}
+// null when runs/<night>.jsonl is not on disk. A line that does not parse is counted.
+export { readNight } from './read.js';
